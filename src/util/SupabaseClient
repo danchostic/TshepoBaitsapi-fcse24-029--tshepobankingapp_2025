@@ -1,0 +1,25 @@
+package util;
+
+import java.net.http.*;
+import java.net.URI;
+import java.net.http.HttpResponse;
+import java.io.IOException;
+
+public class SupabaseClient {
+    private static final String SUPABASE_URL = "https://szwcaqefnkfmzpskhjyz.supabase.co";
+    private static final String SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN6d2NhcWVmbmtmbXpwc2toanl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3NzY1ODYsImV4cCI6MjA3ODM1MjU4Nn0.5sh0g4yIfH-T0TuSSG9DeRf0DstVX3r_LfI2PdUpyiA";
+
+    private static final HttpClient client = HttpClient.newHttpClient();
+
+    public static String get(String table) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create(SUPABASE_URL + "/rest/v1/" + table))
+            .header("apikey", SUPABASE_KEY)
+            .header("Authorization", "Bearer " + SUPABASE_KEY)
+            .header("Accept", "application/json")
+            .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+}
