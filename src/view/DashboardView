@@ -1,0 +1,16 @@
+package view;
+
+import javafx.scene.layout.VBox;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+public class DashboardView {
+    private VBox layout;
+
+    public DashboardView(Stage stage) {
+        layout = new VBox();
+        // TODO: Add buttons and labels
+    }
+
+    public VBox getView() { return layout; }
+}

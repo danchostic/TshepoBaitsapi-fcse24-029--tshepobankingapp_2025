@@ -1,0 +1,18 @@
+package view;
+
+import javafx.scene.layout.VBox;
+import javafx.scene.control.ListView;
+import javafx.stage.Stage;
+
+public class AccountView {
+    private VBox layout;
+    private ListView<String> accountList;
+
+    public AccountView(Stage stage) {
+        layout = new VBox();
+        accountList = new ListView<>();
+        // TODO: Populate with account details later
+    }
+
+    public VBox getView() { return layout; }
+}

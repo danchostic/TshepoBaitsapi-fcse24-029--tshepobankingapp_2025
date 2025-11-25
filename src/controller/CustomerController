@@ -1,0 +1,14 @@
+package controller;
+
+import model.Customer;
+import model.Account;
+
+public class CustomerController {
+    public void addAccountToCustomer(Customer customer, Account account) {
+        customer.addAccount(account);
+    }
+
+    public void showCustomerAccounts(Customer customer) {
+        customer.listAccounts();
+    }
+}

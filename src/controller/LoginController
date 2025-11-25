@@ -1,0 +1,10 @@
+package controller;
+
+import model.Customer;
+
+public class LoginController {
+    public boolean authenticate(String username, String password) {
+        // TODO: Add authentication logic (dummy for now)
+        return username.equals("admin") && password.equals("1234");
+    }
+}

@@ -1,0 +1,19 @@
+package view;
+
+import javafx.scene.layout.GridPane;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+public class LoginView {
+    private GridPane layout;
+    private TextField usernameField;
+    private PasswordField passwordField;
+    private Button loginButton;
+
+    public LoginView(Stage stage) {
+        layout = new GridPane();
+        // TODO: Add GUI controls, align layout, etc.
+    }
+
+    public GridPane getView() { return layout; }
+}
